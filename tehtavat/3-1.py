@@ -1,2 +1,2 @@
-nimi=input("Anna nimesi ")
+nimi=input("Anna nimesi: ")
 print("Hei " + nimi)

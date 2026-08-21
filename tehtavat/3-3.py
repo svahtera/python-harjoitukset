@@ -1,4 +1,4 @@
-lengthStr=input("Anna suorakulmion kanta: ")
+lengthStr=input(f"{'Anna suorakulmion kanta:':20s}")
 heightStr=input("Anna suorakulmion korkeus: ")
 
 length=float(lengthStr)

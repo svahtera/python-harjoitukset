@@ -6,4 +6,4 @@ Samuli Vahtera
 Tein Hello World ohjelman
 
 ## Tehtäväsarja
-Tein harjoituksen 1
+Tein harjoitukset 1-3
