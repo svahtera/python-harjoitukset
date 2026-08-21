@@ -5,4 +5,5 @@ Samuli Vahtera
 ## Moduuli 1
 Tein Hello World ohjelman
 
-## Moduuli 3
+## Tehtäväsarja
+Tein harjoituksen 1
