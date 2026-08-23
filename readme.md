@@ -2,8 +2,17 @@
 
 Samuli Vahtera
 
-## Moduuli 1
-Tein Hello World ohjelman
+## Moduulit 1-2
+Tein tehtävät 1 ja 2
 
-## Tehtäväsarja
-Tein harjoitukset 1-5 ala-askeleineen
+## Moduuli 3
+Tein tehtävät 1-6 sekä projekti 1
+
+## Moduuli 4
+Tein tehtävät 1-4
+
+## Moduuli 5
+Tein tehtävät 1-6 sekä projekti 2
+
+## Moduuli 6
+Tein tehtävät 1-3
