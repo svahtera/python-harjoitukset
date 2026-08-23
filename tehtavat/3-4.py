@@ -1,5 +1,4 @@
 #Lue luvut
-import math
 
 first=int(input("Syötä ensimmäinen kokonaisluku: "))
 second=int(input("Syötä toinen kokonaisluku: "))
@@ -13,4 +12,7 @@ average=sum/3
 #Tulostus
 print(f"{'Lukujen summa on '}{sum}{'.'}")
 print(f"{'Lukujen tulo on '}{product}{'.'}")
-print(f"{'Lukujen keskiarvo on '}{average:.2f}{'.'}")
+if int(average)==average:
+    print(f"{'Lukujen keskiarvo on '}{int(average)}{'.'}")
+else:
+    print(f"{'Lukujen keskiarvo on '}{average:.2f}{'.'}")

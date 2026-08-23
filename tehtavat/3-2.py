@@ -1,6 +1,16 @@
 import math
-rStr=input("Anna ympyrän säde: ")
+
+numTest=bool(False)
+while numTest==False:
+    radius=input("Anna ympyrän säde: ")
+    radius=radius.replace(",", ".")
+    try:
+        float(radius)
+    except:
+        print("Luku ei kelpaa. Syötä vain numeroita.")
+    else:
+        numTest=True
+        radius=float(radius)
 pi=math.pi
-radius=float(rStr)
 area=2*pi*radius
-print(f"{'Ympyrän pinta-ala on '}{area:.2f}")
+print(f"{'Ympyrän pinta-ala on '}{area:.2f}.")
