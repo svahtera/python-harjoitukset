@@ -1,42 +1,24 @@
-#Yksiköiden alustus kilogrammoiksi
 import math
 
-#Lukujen syöttö
-numTest=bool(False)
-while numTest==False:
-    leiviska=input("Anna leiviskät: ")
-    leiviska=leiviska.replace(",", ".")
-    try:
-        float(leiviska)
-    except:
-        print("Luku ei kelpaa. Syötä vain numeroita.")
-    else:
-        leiviska=float(leiviska)
-        numTest=True
+#Luvunsyöttöfunktio
+def numIn(query):
+    t=False
+    while t==False:
+        num=input(query)
+        num=num.replace(",", ".")
+        try:
+            float(num)
+        except:
+            print("Luku ei kelpaa. syötä vain numeroita.")
+        else:
+            num=float(num)
+            t=True
+    return num
 
-numTest=bool(False)
-while numTest==False:
-    naula=input("Anna naula: ")
-    naula=naula.replace(",", ".")
-    try:
-        float(naula)
-    except:
-        print("Luku ei kelpaa. Syötä vain numeroita.")
-    else:
-        naula=float(naula)
-        numTest=True
-        
-numTest=bool(False)
-while numTest==False:
-    luoti=input("Anna luodit: ")
-    luoti=luoti.replace(",", ".")
-    try:
-        float(luoti)
-    except:
-        print("Luku ei kelpaa. Syötä vain numeroita.")
-    else:
-        luoti=float(luoti)
-        numTest=True
+#Lukujen syöttö
+leiviska=numIn("Anna leiviskät: ")
+naula=numIn("Anna naulat: ")
+luoti=numIn("Anna luodit: ")
 
 #Yksikkömuunnos
 total=math.fma(leiviska, 8.512, math.fma(naula, .4256, math.fma(luoti, .0133, 0.0)))
