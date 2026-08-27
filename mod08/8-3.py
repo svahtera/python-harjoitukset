@@ -1,21 +1,25 @@
-dictAirports={}
-sExitMsg="Kiitos Käynnistä"
+dictAirports={
+}
 sEntry=""
+sExit="Kiitos käynnistä!"
 
 def newAirport ():
-    sNameIn=input("Lentoaseman nimi: ")
-    sCodeIn=str.capitalize(input("ICAO: "))
-    dictAirports[sNameIn]=sCodeIn
-    
-#while sEntry!="L" or sQuery!="U":
-sEntry=str.capitalize(input("(U)usi vai (L)opeta? "))
+    sNameIn=str.capitalize(input("Lentoaseman nimi: "))
+    sCodeIn=str.upper(input("ICAO: "))
+    dictAirports[sCodeIn]=sNameIn
+
 while sEntry!="L" or sEntry!="U" or sEntry!="H":
+    sEntry=str.upper(input("(U)usi, (H)aku vai (L)opeta? "))
     if sEntry=="L":
-        exit(sExitMsg)
+        break
     elif sEntry=="U":
         newAirport()
     elif sEntry=="H":
-        sQuery=input("Hae lentokenttä: ")
+        if dictAirports=={}:
+            break
+        sQuery=str.upper(input("Hae lentokenttä: "))
         if sQuery in dictAirports:
             print(f"{sQuery}: {dictAirports[sQuery]}")
-    sEntry=str.capitalize(input("(U)usi, (H)aku vai (L)opeta? "))
+        else:
+            print(f"Lentokenttää {sQuery} ei löytynyt.")
+print(sExit)
