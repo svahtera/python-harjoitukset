@@ -19,19 +19,9 @@ while t==False:
         t=True
 
 #tulos
-#Mies
-if gen=="M":
-    if glob<134:
-        print("Hemoglobiiniarvosi on matala.")
-    elif glob>195:
-        print("Hemoglobiiniarvosi on korkea.")
-    else:
-        print("Hemoglobiiniarvosi on normaali.")
-#Nainen
-if gen=="N":
-    if glob<117:
-        print("Hemoglobiiniarvosi on matala.")
-    elif glob>175:
-        print("Hemoglobiiniarvosi on korkea.")
-    else:
-        print("Hemoglobiiniarvosi on normaali.")
+if (gen=="M" and glob < 134) or (gen=="N" and glob < 117):
+    print("Hemoglobiiniarvosi on matala.")
+elif (gen=="M" and glob > 195) or (gen=="N" and glob > 175):
+    print("Hemoglobiiniarvosi on korkea.")
+else:
+    print("Hemoglobiiniarvosi on normaali.")
