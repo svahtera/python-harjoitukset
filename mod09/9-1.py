@@ -1,8 +1,6 @@
 import math
 import random
 
-lCars=[]
-bFinish=False
 fTime=0
 
 #Luvunsyöttöfunktio
