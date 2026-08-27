@@ -15,4 +15,7 @@ Tein tehtävät 1-4
 Tein tehtävät 1-6 sekä projekti 2
 
 ## Moduuli 6
-Tein tehtävät 1-3
+Tein tehtävät 1-4
+
+## Moduuli 7
+Tein tehtävät 1-6
