@@ -21,4 +21,7 @@ Tein tehtävät 1-4
 Tein tehtävät 1-6
 
 ## Moduuli 8
-Tein TEhtävät 1-3
+Tein Tehtävät 1-3
+
+## Moduuli 9
+Tein tehtävän 9
