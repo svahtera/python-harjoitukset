@@ -2,6 +2,8 @@ import math
 import random
 
 fTime=0
+lCars=[]
+bFinish=False
 
 #Autoluokka
 class Auto:
