@@ -1,11 +1,15 @@
 username="python"
 password="rules"
 
-for i in range(5):
+bLogin=False
+iAttempts=0
+while bLogin==False:
     usernameIn=input("Käyttäjänimi: ")
     passwordIn=input("Salasana: ")
     if usernameIn==usernameIn and passwordIn==password:
-        break
-    elif i==4:
+        bLogin=True
+    else:
+        iAttempts=iAttempts+1
+    if iAttempts==5:
         exit("Pääsy Evätty")
 print("Tervetuloa")

@@ -6,17 +6,7 @@ def die():
     return roll
 
 roll=0
-
-t=False
-while t==False:
-    d=input("Kuinka mini tahkoista noppaa heitetään?")
-    try:
-        int(d)
-    except:
-        print("Luku ei kelpaa. Syötä vain numeroita.")
-    else:
-        t=True
-        d=int(d)
+d=int(input("Kuinka moni tahkoista noppaa heitetään? <"))
 
 roll=0
 while roll != d:
