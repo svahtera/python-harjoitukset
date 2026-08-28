@@ -3,21 +3,6 @@ import random
 
 fTime=0
 
-#Luvunsyöttöfunktio
-def numIn(sQuery):
-    t=False
-    while t==False:
-        num=input(sQuery)
-        num=num.replace(",", ".")
-        try:
-            float(num)
-        except:
-            print("Luku ei kelpaa. syötä vain numeroita.")
-        else:
-            num=float(num)
-            t=True
-    return num
-
 #Autoluokka
 class Auto:
     def __init__(self, sLicense, iTopSpeed, iCurSpeed=0, iDistance=0):

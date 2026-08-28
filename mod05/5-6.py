@@ -1,20 +1,8 @@
 import random
 import math
 
-A=1
+N=int(input("Kuinka monta pistettä haluat arpoa? "))    
 
-t=False
-while t==False:
-    N=input("Kuinka monta pistettä haluat arpoa? ")
-    try:
-        int(N)
-    except:
-        print("Luku ei kelpaa. Syötä vain numeroita.")
-    else:
-        t=True
-        N=int(N)
-
-#i=0
 n=0
 for i in range(N+1):
     xPos=random.triangular(-1, 1)

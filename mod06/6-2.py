@@ -2,11 +2,10 @@ list=[]
 
 n=input("Syötä luku tai lopeta painamalla enter: ")
 while n!="":
-    list.append(str(n))
+    list.append(int(n))
     n=input("Syötä luku tai lopeta painamalla enter: ")
 list.sort(reverse=True)
 
-#print(list[0:5])
 i=0
 while i<5:
     print(list[i])
