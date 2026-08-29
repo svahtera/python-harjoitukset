@@ -1,7 +1,18 @@
-##Asetukset
-#Hypervalikon status
+#Muuttujien alustus
+lInventory=[]
+playerInput=""
+
 sHyperMenuState="suljettu"
 bHyperMenuOpen=False
+
+sAwesomenessDetectionState="epäaktiivinen"
+bAwesomenessDetection=False
+
+sBonesState="pois"
+bBones=False
+
+##Asetukset
+#Hypervalikon status
 def hypermenu(bHyperMenuOpen):
     if bHyperMenuOpen==False:
         bHyperMenuOpen=True
@@ -12,8 +23,6 @@ def hypermenu(bHyperMenuOpen):
     return bHyperMenuOpen, sHyperMenuState
 
 #Siisteydentunnistuksen status
-sAwesomenessDetectionState="epäaktiivinen"
-bAwesomenessDetection=False
 def awesomenessDetection(bAwesomenessDetection):
     if bAwesomenessDetection==False:
         bAwesomenessDetection=True
@@ -24,8 +33,6 @@ def awesomenessDetection(bAwesomenessDetection):
     return bAwesomenessDetection, sAwesomenessDetectionState
 
 #luiden status
-sBonesState="pois"
-bBones=False
 def bones(bBones):
     if bBones==False:
         bBones=True
@@ -37,9 +44,9 @@ def bones(bBones):
 
 ##inventory
 #Keräys
-lInventory=[]
 def inventoryTake():
-    lInventory.append((input("\nKerää esine: ")))
+    #Kun huoneet on implementoitu, tässä on paikka tarkastaa löytyykö esineitä
+    lInventory.append(input("\nKerää esine: "))
 
 #Listaus
 def inventoryPrint():
@@ -47,18 +54,19 @@ def inventoryPrint():
     for i in lInventory:
         print("> "+ i)
 
+#Tehtävä 1
+#Nimen ja iän tallennus
+sPlayerName=input("Nimesi: ")
+iPlayerAge=int(input("Ikäsi: "))
 
-playerInput=""
-
-playerName=input("Nimesi: ")
-playerAge=int(input("Ikäsi: "))
-
-if playerAge < 12:
-    exit(f"Kiitos mielenkiinnostasi {playerName}, mutta tämän ohjelman ikäraja on 12.")
+#Tehtävä 2
+#Iän tarkastus
+if iPlayerAge < 12:
+    exit(f"Kiitos mielenkiinnostasi {sPlayerName}, mutta tämän ohjelman ikäraja on 12.")
 else:
-    print(f"Terve {playerName}! Ikäsi on {playerAge}.\n")
+    print(f"Terve {sPlayerName}! Ikäsi on {iPlayerAge}.\n")
 
-#mainMenu
+##Main Menu
 while str.upper(playerInput)!="1":
     #teksti
     print("\nHIENO OTSIKKO\n")
@@ -82,7 +90,11 @@ while str.upper(playerInput)!="LOPETA":
     #valinnat
     playerInput=input()
     if playerInput=="1":
-        print("\nLiikut testitilassa.")
+        if bBones==True:
+            print("\nLiikut testitilassa.")
+            #Liike tähän myöhemmin
+        else:
+            print("\nSinulla ei ole luita. Olet kykenemätön liikkumana omin voimin.")
     if playerInput=="2":
         inventoryTake()
     if playerInput=="3":
