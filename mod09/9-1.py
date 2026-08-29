@@ -1,7 +1,6 @@
 import math
 import random
 
-fTime=0
 lCars=[]
 bFinish=False
 
@@ -24,9 +23,9 @@ class Auto:
             self.iCurSpeed=self.iCurSpeed+iAcc
 
     #Ajometodi
-    def drive(self, fTime):
-        self.iDistance=int(math.fma(fTime, self.iCurSpeed, self.iDistance))
-        return self.iDistance>=10000
+    def drive(self):
+        self.iDistance=self.iCurSpeed+self.iDistance
+        return
 
 
     #raportointi
@@ -41,11 +40,10 @@ for i in range(10):
 
 #Ajo
 while bFinish!=True:
-    for r in lCars:
-        r.accelerate(random.randint(-10, 15))
-        fTime=fTime+1
-        r.drive(fTime)
-        if r.iDistance>=10000:
+    for i in lCars:
+        i.accelerate(random.randint(-10, 15))
+        i.drive()
+        if i.iDistance>=10000:
             bFinish=True
 
 print(f"\tHuippu- \tNopeus \tKuljettu:")
