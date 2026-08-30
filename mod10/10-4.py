@@ -71,22 +71,6 @@ for i in range(10):
     lCars.append(Auto(sLicense, iGenSpeed))
 
 #Ajo
-#while bFinish!=True:
-#    for r in lCars:
-#        r.accelerate(random.randint(-10, 15))
-#        fTime=fTime+1
-#        r.drive(fTime)
-#        if r.iDistance>=10000:
-#            bFinish=True
-#
-#print(f"\tHuippu- \tNopeus \tKuljettu:")
-#print(f"Auto: \tnopeus: \tNyt \tMatka:")
-#
-#for i in lCars:
-#    i.report()
-
-
-#Ajo
 race1=Race("Suuri romuralli", 8000, lCars)
 iTime=0
 bFinish=False

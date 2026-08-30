@@ -30,7 +30,8 @@ class Auto:
 
     #raportointi
     def report(self):
-        print(f"{self.sLicense} \t{self.iTopSpeed}km/h \t{self.iCurSpeed}km/h \t{self.iDistance}km")
+        print(f"{self.sLicense:<10}{str(self.iTopSpeed)+' km/h':<12}{str(self.iCurSpeed)+' km/h':12}{str(self.iDistance)+' km'}")
+
 
 #Autojen generointi
 for i in range(10):
@@ -46,8 +47,8 @@ while bFinish!=True:
         if i.iDistance>=10000:
             bFinish=True
 
-print(f"\tHuippu- \tNopeus \tKuljettu:")
-print(f"Auto: \tnopeus: \tNyt \tMatka:")
+print(f"{'':<10}{'Huippu-':<12}{'Nopeus':<12}{'Kuljettu'}")
+print(f"{'Auto:':<10}{'nopeus:':<12}{'Nyt':<12}{'Matka:'}")
 
 for i in lCars:
     i.report()
