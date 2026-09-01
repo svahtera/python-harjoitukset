@@ -17,9 +17,11 @@ def hypermenu(bHyperMenuOpen):
     if bHyperMenuOpen==False:
         bHyperMenuOpen=True
         sHyperMenuState="epäsuljettu"
+        print(f"\nHypervalikko epäsuljettu")
     else:
         bHyperMenuOpen=False
         sHyperMenuState="suljettu"
+        print(f"\nHypervalikko suljettu")
     return bHyperMenuOpen, sHyperMenuState
 
 #Siisteydentunnistuksen status
@@ -27,9 +29,11 @@ def awesomenessDetection(bAwesomenessDetection):
     if bAwesomenessDetection==False:
         bAwesomenessDetection=True
         sAwesomenessDetectionState="aktiivinen"
+        print(f"\nSiisteydentunnistus aktivoitu")
     else:
         bAwesomenessDetection=False
         sAwesomenessDetectionState="epäaktiivinen"
+        print(f"\nSiisteydentunnistus epäaktivoitu")
     return bAwesomenessDetection, sAwesomenessDetectionState
 
 #luiden status
@@ -37,9 +41,11 @@ def bones(bBones):
     if bBones==False:
         bBones=True
         sBonesState="päällä"
+        print(f"Luut kytketty")
     else:
         bBones=False
         sBonesState="pois"
+        print(f"Luut poistettu")
     return bBones, sBonesState
 
 ##inventory
