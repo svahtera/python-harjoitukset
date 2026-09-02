@@ -63,21 +63,29 @@ class Race:
                 bFinish=False
         return bFinish
 
-#Autojen generointi
-for i in range(10):
-    sLicense="ABC-"+str(i+1)
-    iGenSpeed=int(random.randint(100,200))
-    lCars.append(Auto(sLicense, iGenSpeed))
+#Sähkö- ja polttomottootorit
+class Electric(Auto):
+    def __init__(self, sLicense, fBattCap, iTopSpeed):
+        self.battCap=fBattCap
+        Auto.__init__(self, sLicense, iTopSpeed)
+
+class Gas(Auto):
+    def __init__(self, sLicense, fFuelCap, iTopSpeed):
+        self.fuelCap=fFuelCap
+        Auto.__init__(self, sLicense, iTopSpeed)
+
+#Autojen määrittely
+lCars.append(Electric("ELV-015", 52.5, 180))
+lCars.append(Gas("GAS-123", 32.3, 165))
+
 
 #Ajo
-race1=Race("Suuri romuralli", 8000, lCars)
-iTime=0
-bFinish=False
-while bFinish!=True:
-    iTime=iTime+1
-    race1.hourly()
-    bFinish=race1.finish()
-    if iTime==10:
-        iTime=0
-        race1.standings()
-race1.standings()
+for i in range(3):
+    for i in lCars:
+        i.accelerate(20)
+        i.drive()
+
+print(f"{'':<10}{'Huippu-':<12}{'Nopeus':<12}{'Kuljettu'}")
+print(f"{'Auto:':<10}{'nopeus:':<12}{'Nyt':<12}{'Matka:'}")
+for i in lCars:
+    i.report()
