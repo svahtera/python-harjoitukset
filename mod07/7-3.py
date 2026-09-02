@@ -10,4 +10,4 @@ def conv(gal):
 
 while gal>=0:
     gal=float(input("Kuinka monta gallonaa? "))
-    print(conv(gal))
+    print(f"{conv(gal)} litraa")

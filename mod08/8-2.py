@@ -1,4 +1,4 @@
-sName=input("Anna nimi")
+sName=input("Anna nimi ")
 lName=[]
 while sName != "":
     if sName in lName:
@@ -6,4 +6,4 @@ while sName != "":
     else:
         lName.append(sName)
         print("Uusi nimi.")
-    sName=input("Anna nimi")
+    sName=input("Anna nimi ")

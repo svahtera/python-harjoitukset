@@ -1,7 +1,12 @@
 n=int(input("Syötä kokonaisluku: "))
 
 comp=False
-for i in range(0, n-1):
+
+#Vain parittomat luvut voivat olla alkulukuja
+#Ohjelmaa on turha jatkaa kun on testannut yli puolet luvun suuruudesta
+for i in range(1,int(n/2+1),2):
+
+    #Annettuluku on yhdistetty luku jos siitä ei jää jakojäännöstä
     if n/(i+1)==int(n/(i+1)):
         if i+1!=1:
             comp=True
