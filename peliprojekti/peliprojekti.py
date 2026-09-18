@@ -79,12 +79,16 @@ class Item():
 
 #Huoneet
 class Room():
-    def __init__(self, sName="PENKINLÄMMITTÄJÄ", items=set(), obj=set, coms=set()):
+    def __init__(self, sName="PENKINLÄMMITTÄJÄ", sDesc="Olet muodottomassa testitilassa.", items=set(), obj=set, coms=set()):
         self.sName=sName
+        self.sDesc=sDesc
         self.items=items    #Esineet jotka pelaaja voi kerätä
         self.lObj=obj       #Kohteet joilla on interaktiot
         self.coms=coms      #Komennot
 
+    def menu(self):
+        print(f"{self.sName}\n{self.sDesc}")
+        #Tähän komentojen jne tulostus.
 
 #Muuttujien alustus
 playerInput=""
