@@ -1,27 +1,9 @@
-import math
-
-#Luvunsyöttöfunktio
-def numIn(query):
-    t=False
-    while t==False:
-        num=input(query)
-        num=num.replace(",", ".")
-        try:
-            float(num)
-        except:
-            print("Luku ei kelpaa. syötä vain numeroita.")
-        else:
-            num=float(num)
-            t=True
-    return num
-
-#Lukujen syöttö
-leiviska=numIn("Anna leiviskät: ")
-naula=numIn("Anna naulat: ")
-luoti=numIn("Anna luodit: ")
+leiviska=float(input("Anna leiviskät: "))
+naula=float(input("Anna naulat: "))
+luoti=float(input("Anna luodit: "))
 
 #Yksikkömuunnos
-total=math.fma(leiviska, 8.512, math.fma(naula, .4256, math.fma(luoti, .0133, 0.0)))
+total=float(leiviska * 8.512 + naula * .4256 + luoti * .0133)
 kilograms=int(total)
 grams=round((total-kilograms)*1000)
 

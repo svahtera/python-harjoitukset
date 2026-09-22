@@ -6,7 +6,7 @@ def die():
     return roll
 
 roll=0
-d=int(input("Kuinka moni tahkoista noppaa heitetään? <"))
+d=int(input("Kuinka moni tahkoista noppaa heitetään? "))
 
 roll=0
 while roll != d:

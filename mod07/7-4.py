@@ -1,8 +1,8 @@
-def adup(r):
+def adup(list):
     total=0
-    for i in range(r):
-        total=total+int(numbers[i])
+    for i in list:
+        total=total+i
     return total
 
 numbers=[1,2,3,4,5]
-print(adup(len(numbers)))
+print(adup(numbers))

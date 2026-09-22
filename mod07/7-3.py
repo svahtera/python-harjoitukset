@@ -5,7 +5,7 @@ litre=0
 
 #Muunnosfunktio
 def conv(gal):
-    litre=math.fma(gal, 4.785, 0)
+    litre=gal * 3.785
     return litre
 
 while gal>=0:

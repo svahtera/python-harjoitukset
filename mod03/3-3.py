@@ -1,28 +1,7 @@
-#Lue luvut
-numTest=bool(False)
-while numTest==False:
-    length=input("Anna suorakulmion kanta: ")
-    length=length.replace(",", ".")
-    try:
-        float(length)
-    except:
-        print("Luku ei kelpaa. Syötä vain numeroita.")
-    else:
-        length=float(length)
-        numTest=True
-numTest=bool(False)
-while numTest==False:
-    height=input("Anna suorakulmion korkeus: ")
-    height=height.replace(",", ".")
-    try:
-        float(height)
-    except:
-        print("Luku ei kelpaa. Syötä vain numeroita.")
-    else:
-        height=float(height)
-        numTest=True
 
-#Laskut
+numTest=bool(False)
+length=int(input("Anna suorakulmion kanta: "))
+height=int(input("Anna suorakulmion korkeus: "))
 circumference=2*(length+height)
 area=length*height
 

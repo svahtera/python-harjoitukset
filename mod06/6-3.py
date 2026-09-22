@@ -1,17 +1,17 @@
-n=int(input("Syötä kokonaisluku: "))
+number=int(input("Syötä kokonaisluku: "))
 
 comp=False
 
 #Vain parittomat luvut voivat olla alkulukuja
 #Ohjelmaa on turha jatkaa kun on testannut yli puolet luvun suuruudesta
-for i in range(1,int(n/2+1),2):
-
+for i in range(3,int(number/2+1),2):
     #Annettuluku on yhdistetty luku jos siitä ei jää jakojäännöstä
-    if n/(i+1)==int(n/(i+1)):
-        if i+1!=1:
-            comp=True
-            break
+    if number % i == 0:
+        comp=True
+        break
+if number == 1:
+    comp=True
 if comp==True:
-    print(f'{n}{" ei ole alkuluku"}')
+    print(f'{number}{" ei ole alkuluku"}')
 else:
-    print(f'{n}{" on alkuluku"}')
+    print(f'{number}{" on alkuluku"}')

@@ -10,9 +10,6 @@ product=first*second*third
 average=sum/3
 
 #Tulostus
-print(f"{'Lukujen summa on '}{sum}{'.'}")
-print(f"{'Lukujen tulo on '}{product}{'.'}")
-if int(average)==average:
-    print(f"{'Lukujen keskiarvo on '}{int(average)}{'.'}")
-else:
-    print(f"{'Lukujen keskiarvo on '}{average:.2f}{'.'}")
+print(f"Lukujen summa on {sum}.")
+print(f"Lukujen tulo on {product}.")
+print(f"Lukujen keskiarvo on {int(average)}.")

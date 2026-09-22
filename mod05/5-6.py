@@ -5,8 +5,8 @@ N=int(input("Kuinka monta pistettä haluat arpoa? "))
 
 n=0
 for i in range(N+1):
-    xPos=random.triangular(-1, 1)
-    yPos=random.triangular(-1, 1)
+    xPos=random.uniform(-1, 1)
+    yPos=random.uniform(-1, 1)
     if xPos**2+yPos**2<1:
         n=int(n+1)
 aprox=4*n/N
