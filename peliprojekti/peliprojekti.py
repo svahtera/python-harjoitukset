@@ -1,33 +1,42 @@
 ##Asetukset
-class Option:
+class Player:
     #Alustus
     sHyperMenuState="suljettu"
     bHyperMenuOpen=False
-
     sAwesomenessDetectionState="epäaktiivinen"
     bAwesomenessDetection=False
+
+    sName=""
+    iAge=0
+
+    bBones=False
+    sBonesState="pois"
+
+    #Pelin tilaan liittyviä muuttujia
+    sLocation=""    #Pelaajan sijainti
+    inventory=[]   #Pelaajan esineet
     
     #Hypervalikon status
     def hypermenu():
-        if Option.bHyperMenuOpen==False:
-            Option.bHyperMenuOpen=True
-            Option.sHyperMenuState="epäsuljettu"
+        if Player.bHyperMenuOpen==False:
+            Player.bHyperMenuOpen=True
+            Player.sHyperMenuState="epäsuljettu"
             print(f"\nHypervalikko epäsuljettu")
         else:
-            Option.bHyperMenuOpen=False
-            Option.sHyperMenuState="suljettu"
+            Player.bHyperMenuOpen=False
+            Player.sHyperMenuState="suljettu"
             print(f"\nHypervalikko suljettu")
         return
 
     #Siisteydentunnistuksen status
     def awesomenessDetection():
-        if Option.bAwesomenessDetection==False:
-            Option.bAwesomenessDetection=True
-            Option.sAwesomenessDetectionState="aktiivinen"
+        if Player.bAwesomenessDetection==False:
+            Player.bAwesomenessDetection=True
+            Player.sAwesomenessDetectionState="aktiivinen"
             print(f"\nSiisteydentunnistus aktivoitu")
         else:
-            Option.bAwesomenessDetection=False
-            Option.sAwesomenessDetectionState="epäaktiivinen"
+            Player.bAwesomenessDetection=False
+            Player.sAwesomenessDetectionState="epäaktiivinen"
             print(f"\nSiisteydentunnistus epäaktivoitu")
         return
 
@@ -45,50 +54,55 @@ class Option:
         return
 
 #Pelaaja
-class Player:
-    #Alustus
-
-    sName=""
-    iAge=0
-
-    bBones=False
-    sBonesState="pois"
-
-    sLocation=""
-
-    def __init__():
-        pass
 
 ##Esineet
 class Item():
-    inventory=set()   #Pelaajan esineet
-
-    def __init__(self, sName):
+    def __init__(self, sName, fWeight):
         self.sName=sName
-
-    #Keräys
-    def take():
-        #Kun huoneet on implementoitu, tässä on paikka tarkastaa löytyykö esineitä
-        Item.inventory.add(input("\nKerää esine: "))
+        self.fWeight=fWeight
+        
 
     #Listaus
     def show():
         print("\nKannat:")
-        for i in Item.inventory:
+        for i in Player.inventory:
             print("> "+ i)
 
 #Huoneet
 class Room():
-    def __init__(self, sName="PENKINLÄMMITTÄJÄ", sDesc="Olet muodottomassa testitilassa.", items=set(), obj=set, coms=set()):
+    def __init__(self, items, sName="PENKINLÄMMITTÄJÄ", sDesc="Olet muodottomassa testitilassa."):
         self.sName=sName
         self.sDesc=sDesc
         self.items=items    #Esineet jotka pelaaja voi kerätä
-        self.lObj=obj       #Kohteet joilla on interaktiot
-        self.coms=coms      #Komennot
 
     def menu(self):
-        print(f"{self.sName}\n{self.sDesc}")
+        playerInput=""
+
         #Tähän komentojen jne tulostus.
+        while str.upper(playerInput)!="LOPETA":
+            print(f"{self.sName}\n{self.sDesc}")
+            print(f"\n1. Liiku\n2. Kerää\n3. Listaa esineet\n\ntai LOPETA")
+            playerInput=input()
+
+            if playerInput=="1":
+                if Player.bBones==True:
+                    print("\nLiikut testitilassa.")
+                    #Liike tähän myöhemmin
+                else:
+                    print("\nSinulla ei ole luita. Olet kykenemätön liikkumana omin voimin.")
+            if playerInput=="2":
+                sItemTaken=input("Kerää esine: ")
+                if sItemTaken in self.items:
+                    Player.inventory.append(sItemTaken)
+                    self.items.remove(sItemTaken)
+                else:
+                    print(f"Et löydä esinettä {sItemTaken}.")
+            if playerInput=="3":
+                Item.show()
+        if str.upper(playerInput)=="LOPETA":
+            exit("Kiitos känyynistä")
+
+testspace=Room(["Urheilu Almanakka 1985", "TT-33"])
 
 #Muuttujien alustus
 playerInput=""
@@ -109,34 +123,18 @@ else:
 while str.upper(playerInput)!="1":
     #teksti
     print("\nHIENO OTSIKKO\n")
-    print(f"1. Aloita\n2. Hypervalikko {Option.sHyperMenuState}\n3. Siisteydentunnistus {Option.sAwesomenessDetectionState}\n4. Luut {Player.sBonesState}\n\ntai LOPETA")
+    print(f"1. Aloita\n2. Hypervalikko {Player.sHyperMenuState}\n3. Siisteydentunnistus {Player.sAwesomenessDetectionState}\n4. Luut {Player.sBonesState}\n\ntai LOPETA")
 
     #valinnat
     playerInput=input()
     if playerInput=="2":
-        Option.hypermenu()
+        Player.hypermenu()
     if playerInput=="3":
-        Option.awesomenessDetection()
+        Player.awesomenessDetection()
     if playerInput=="4":
-        Option.bones()
+        Player.bones()
     if str.upper(playerInput)=="LOPETA":
         exit("Kiitos käynnistä")
 
+testspace.menu()
 #Main Loop
-while str.upper(playerInput)!="LOPETA":
-    print(f"\n1. Liiku\n2. Kerää\n3. Listaa esineet\n\ntai LOPETA")
-
-    #valinnat
-    playerInput=input()
-    if playerInput=="1":
-        if Player.bBones==True:
-            print("\nLiikut testitilassa.")
-            #Liike tähän myöhemmin
-        else:
-            print("\nSinulla ei ole luita. Olet kykenemätön liikkumana omin voimin.")
-    if playerInput=="2":
-        Item.take()
-    if playerInput=="3":
-        Item.show()
-        
-print("Ohjelman loppu")
