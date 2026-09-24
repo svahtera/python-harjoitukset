@@ -1,5 +1,5 @@
 sName=input("Anna nimi ")
-lName=[]
+lName=set()
 while sName != "":
     if sName in lName:
         print("Aiemmin syötetty nimi.")
@@ -7,3 +7,5 @@ while sName != "":
         lName.append(sName)
         print("Uusi nimi.")
     sName=input("Anna nimi ")
+for i in lName:
+    print(i)

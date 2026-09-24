@@ -14,12 +14,9 @@ while sEntry!="L":
     if sEntry=="U":
         newAirport()
     if sEntry=="H":
-        if dictAirports!={}:    #keskeytä haku jos lentokenttiä ei ole lisätty
-            sQuery=str.upper(input("Hae lentokenttä: "))
-            if sQuery in dictAirports:
-                print(f"{sQuery}: {dictAirports[sQuery]}")
-            else:
-                print(f"Lentokenttää {sQuery} ei löytynyt.")
+        sQuery=str.upper(input("Hae lentokenttä: "))
+        if sQuery in dictAirports:
+            print(f"{sQuery}: {dictAirports[sQuery]}")
         else:
-            print("Syötä ensin lentokenttä.")
+            print(f"Lentokenttää {sQuery} ei löytynyt.")
 print("Kiitos käynnistä")
