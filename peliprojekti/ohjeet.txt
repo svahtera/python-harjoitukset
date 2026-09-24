@@ -1,0 +1,8 @@
+"Valitse komennot numeroilla. Esineritä kerätessä tai objekteja käsitellessä nimeä tekstisyötteellä.\n\n
+
+Isot ja pienet kirjaimet kelpaavat.\n\n
+
+Komennot\n
+LATAA   (Ei implementoitu)\n
+TALLENNA(Ei implementoitu)\n
+LOPETA"
