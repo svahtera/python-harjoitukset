@@ -1,1 +1,0 @@
-#Kun oikeita huoneita on, ne tehdään tähän

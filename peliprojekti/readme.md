@@ -3,32 +3,25 @@ Samuli Vahtera
 
 ### Luokat
 #### Option
--Hypervalikko  
--Siisteyden Tunnistus  
 
 #### Item
 -Esineiden kerääminen  
 -Esineiden listaus
+-Esineiden käyttö
 
 #### Player
--Arvot kuten nimi ja ikä
--Tila  
--Sijainti
+-Nimi ja ikä
 -luut
+-kannetut esineet
+-Sijainti
 
 #### Room
-Navigaatio huoneiden listana naapureita, tai monimutkaisempana taulukkona
-
--Huoneen nimi
--Huoneen esineet
+roomdat.py sisältää sanakirjan muodossa tiedot huoneista.
+Navigaatio huoneiden listana naapureita.
 
 ### Avaustoimentpiteet
--Pelaajan ikä ja nimi 
+-Pelaajan ikä ja nimi, ja haluaako tämä luut
 -Ikäportti
-
-### Muuttujien alustus
-
-### Main Menu
--Asetuksien valinta
+-Vanhan pelin lataus
 
 ### Main Loop
