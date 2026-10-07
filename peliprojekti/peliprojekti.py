@@ -179,6 +179,8 @@ if bContinue==False:
     else:
         print(f"\nTerve {pelaaja.sName}! Ikäsi on {pelaaja.iAge}.\n")
 
+        print("Kreivi Hammark järjestää läänissään kilpailun, jossa on tavoitteena löytää häneen maalleen kadoitettuja aarteita. Palkkioksi hän tarjoaa talojaan, jos löytösi ovat riittävän vakuuttavia.\n\nTorin kupeessa on hänen kartanonsa, johon voit palauttaa mitä löydät, kun uskot olevasi valmis.")
+
 ##Pääsilumukka
 while bRunning == True:
     #Sijainnin nimi ja kuvaus. Jos huoneella on pulma ratkaistavana, testaa onko se suoritettu. Syvä luola on erityistapaus.
@@ -244,5 +246,3 @@ if str.upper(playerInput)=="T":
     print("\nTallennettu!")
     with open(sSavePath, "w") as saveFile:
         json.dump(saveData, saveFile)
-
-#Pisteiden tulostus tässä

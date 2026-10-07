@@ -1,5 +1,0 @@
-"Valitse komennot numeroilla tai suluissa merkityllä kirjaimella. Esineritä kerätessä tai objekteja käsitellessä nimeä tekstisyötteellä.\n\n
-
-Ohjelma ei välitä isoista tai pieinstä alkukirjaimista.\n\n
-
-Komennolla LOPETA voit tallentaa ja sulkea pelin.\n"

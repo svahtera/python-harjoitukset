@@ -1,32 +1,12 @@
-## Pelin otsikko
+## Hammarkin kilpailu
 Samuli Vahtera
 
-### Luokat
-#### Item
--Esineiden kerääminen  
--Esineiden listaus
--Esineiden käyttö
+Peli koostuu kreivi Hammarkin mailla seikkailusta, ja sen tavoitteena on löytää aarteita joista hän on vakuuttunut.
 
-#### Player
--Nimi ja ikä
--luut
--Sijainti
--kannetut esineet
--käytetyt esineet
-
-### Huoneet
-roomdat-moduuli sisältää sanakirjan muodossa tiedot huoneista.
-Navigaatio huoneiden listana naapureita.
-
-### Avaustoimentpiteet
--Pelaajan ikä ja nimi, ja haluaako tämä luut
--Ikäportti
--Vanhan pelin lataus
-
-### Main Loop
+Kun peli kysyy komentoa, se näkyy ruudulla joko numerona tai suilla korostetulla kirjaimella. Alueelle siirtyessä täytyy nimetä tekstisyötteellä mihin on menossa.
 
 ### Pelin päätös
-Jos pelin sulkee, ohjelma jatkaa tallennukseen. Jos pelaaja voittaa tai häviää, kirjataan hänen suoriutumisensa high scores listaan.
+Jos pelin sulkee, ohjelma jatkaa tallennukseen. Peli päättyy kun aarteet palauttaa kreivi Hammarkille.
 
 ### Tallennus
 Peli kysyy haluaako pelaaja tallentaa lopettaessa. Tallennuksessa pidetään kirjaa pelaajan tilasta.
